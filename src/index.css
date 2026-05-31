@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom gorgeous styling for Markdown body contents */
+.markdown-body {
+  font-family: var(--font-sans);
+  line-height: 1.75;
+}
+
+.markdown-body h1 {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e1b4b; /* Indigo-950 */
+}
+
+.markdown-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #312e81; /* Indigo-900 */
+}
+
+.markdown-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #4338ca; /* Indigo-700 */
+}
+
+.markdown-body p {
+  margin-bottom: 1rem;
+  color: #374151; /* Gray-700 */
+}
+
+.dark .markdown-body h1,
+.dark .markdown-body h2,
+.dark .markdown-body h3 {
+  color: #f3f4f6; /* Gray-100 */
+}
+
+.dark .markdown-body p {
+  color: #d1d5db; /* Gray-300 */
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid #6366f1; /* Indigo-500 */
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #4b5563; /* Gray-600 */
+  background-color: #f5f3ff; /* Purple-50 */
+  border-radius: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dark .markdown-body blockquote {
+  background-color: rgb(30, 27, 75, 0.4); /* Indigo-950 */
+  color: #9ca3af;
+}
+
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-body pre {
+  background-color: #1e1e2e;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  background-color: #f3f4f6;
+  color: #d946ef; /* Fuchsia-500 */
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.dark .markdown-body code {
+  background-color: #1f2937;
+  color: #f472b6;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  color: #c9d1d9; /* White-ish code text */
+  padding: 0;
+  border-radius: 0;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glassmorphism {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 
+=========================================
+BENTO GRID THEME DESIGN SPECIFICATIONS
+=========================================
+Extracts color, fonts, shadows, borders,
+and high contrast Bento patterns.
+*/
+
+/* Reset & Root Theme overrides for elite Bento layout */
+html, body, #root {
+  background-color: #f8fafc; /* slate-50 */
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dark, .dark body, .dark #root {
+  background-color: #020617 !important;
+}
+
+/* Bento Cards: Heavy rounding & crisp borders */
+.bento-card {
+  border-radius: 1.5rem !important; /* 24px */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark .bento-card {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(30, 41, 59, 0.8) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.03);
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.dark .bento-card:hover {
+  border-color: rgba(99, 102, 241, 0.45) !important;
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Bento Glow Highlight utilities */
+.bento-glow-indigo {
+  position: relative;
+  overflow: hidden;
+}
+.bento-glow-indigo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14rem;
+  height: 14rem;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  border-radius: 9999px;
+  margin-right: -5rem;
+  margin-top: -5rem;
+}
+
+/* Overwrite classic element selectors to align seamlessly */
+.dark .bg-slate-900,
+.dark .bg-slate-900\/60,
+.dark .bg-slate-900\/40,
+.dark .bg-white\/80 {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-color: rgba(30, 41, 59, 0.8) !important;
+  border-radius: 1.5rem !important; /* 24px */
+}
+
+.dark .border-gray-150,
+.dark .border-slate-850,
+.dark .dark\:border-slate-850 {
+  border-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.dark .text-gray-950 {
+  color: #f1f5f9 !important; /* slate-100 */
+}
+
+/* Bento Grid Dashboard Layout */
+.bento-grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Glowing stats gauges */
+.bento-gauge {
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
+}

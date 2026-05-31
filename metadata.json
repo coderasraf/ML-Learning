@@ -1,0 +1,6 @@
+{
+  "name": "Road to Machine Learning",
+  "description": "A world-class interactive educational academy for mastering Machine Learning, Deep Learning, and GenAI, compiled dynamically from the curated Git syllabus.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
